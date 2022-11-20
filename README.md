@@ -46,43 +46,69 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
-
+~~~
+1.Create module projectname(input ,output) to start the verilog programming.
+2.Create a if loop condition to increase the count in counter_up function.
+3.Similarly, create another loop for the down counter.
+4.End the verilog program using keyword endmodule.
+5.Get the timing diagram and RTL realization diagram for respective Counters.
+~~~
 
 
 ### PROGRAM 
-/*
+~~~
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by:NAVEENKUMAR V 
+RegisterNumber:  212221230068
+~~~
+### UP COUNTER
+~~~
+module upc(clk,reset,upcounter);
+input clk,reset;
+output reg[0:2] upcounter;
+always@(posedge clk or posedge reset)
+begin 
+if(reset)
+upcounter= 3'b 000;
+else
+upcounter=upcounter+1;
+end 
+endmodule 
+~~~
 
+### RTL LOGIC UP COUNTER
+![image](https://user-images.githubusercontent.com/94165322/202895648-c4fb90a5-790f-47f9-bb8e-d84bfee5cdf4.png)
 
+### TIMING DIAGRAMS FOR COUNTER
+![image](https://user-images.githubusercontent.com/94165322/202895670-00c4e8d6-26df-4883-99e5-7ceaf2a64fa3.png)
 
+### TRUTH TABLE
+![image](https://user-images.githubusercontent.com/94165322/202895678-9d0d91d4-7648-4214-86ce-7e42afb90fc4.png)
 
+### DOWN COUNTER
+~~~
+module dc(clock,reset,up);
+input clock,reset;
+output reg[2:0] up;
+always@(posedge clock or posedge reset)
+begin
+if(reset)
+up=3'b 111;
+else
+up=up-1;
+end
+endmodule
+~~~
 
+### RTL LOGIC DOWN COUNTER:
+![image](https://user-images.githubusercontent.com/94165322/202895695-f7cb2a7d-4074-4162-b3dd-468d57596ed0.png)
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+### TIMING DIAGRAM FOR COUNTER:
+![image](https://user-images.githubusercontent.com/94165322/202895706-0ee60787-f269-4aac-8201-c59a558cf3f8.png)
 
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
+### TRUTH TABLE:
+![image](https://user-images.githubusercontent.com/94165322/202895719-58fe5a84-cac3-45d9-95f1-8c6f2ef40191.png)
 
 
 ### RESULTS 
+Thus 4 bit up and down counters is implemented and its functionality is validated.
